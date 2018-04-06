@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS blog_category_assignment;
 DROP TABLE IF EXISTS comment;
 DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS notification;
 DROP TABLE IF EXISTS blog;
 DROP TABLE IF EXISTS user_roles;
 DROP TABLE IF EXISTS user;
@@ -66,14 +65,6 @@ CREATE TABLE `comment` (
   `text` VARCHAR(300) NOT NULL,
   `comment_date` TIMESTAMP NOT NULL,
   `comment_type` VARCHAR(5) NOT NULL,
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE `notification` (
-  id int NOT NULL AUTO_INCREMENT UNIQUE,
-  `user_id` INT NOT NULL,
-  `blog_id` INT NOT NULL,
-  `date` TIMESTAMP NOT NULL,
   PRIMARY KEY (id)
 );
 
