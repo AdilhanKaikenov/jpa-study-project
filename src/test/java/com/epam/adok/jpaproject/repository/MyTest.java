@@ -49,8 +49,8 @@ public class MyTest {
 
         System.out.println("categories size = " + categories.size());
 
-//        transaction.commit();
-//        session.close();
+        transaction.commit();
+        session.close();
 
     }
 
@@ -92,7 +92,7 @@ public class MyTest {
         transaction1.commit();
 
         Transaction transaction2 = session1.beginTransaction();
-        blog.setTitle("New title"); // Blog title name updated in dataBase
+        blog.setTitle("New title"); // Blog title name updated in dataBase as well
         transaction2.commit();
 
         session1.close();
