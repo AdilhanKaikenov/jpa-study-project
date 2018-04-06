@@ -55,7 +55,7 @@ public class MyTest {
     }
 
     @Test
-    public void detachedBlog() {
+    public void detachedEntityObject() {
 
         Session session1 = this.sessionFactory.openSession();
         Transaction transaction1 = session1.beginTransaction();
