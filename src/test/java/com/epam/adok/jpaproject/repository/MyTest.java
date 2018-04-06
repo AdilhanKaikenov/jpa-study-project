@@ -54,6 +54,10 @@ public class MyTest {
 
     }
 
+//    persist(myEntity); saves entity to the context
+//    flush(); triggers insert into database
+//    clear(); removes entity from the context == entity is no longer managed
+
     @Test
     public void detachedEntityObject() {
 
