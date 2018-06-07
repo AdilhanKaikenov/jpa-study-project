@@ -79,3 +79,50 @@ ALTER TABLE `comment` ADD CONSTRAINT `comment_fk0` FOREIGN KEY (`blog_id`) REFER
 ALTER TABLE `comment` ADD CONSTRAINT `comment_fk1` FOREIGN KEY (`category_id`) REFERENCES `category`(`id`);
 ALTER TABLE `comment` ADD CONSTRAINT `comment_fk2` FOREIGN KEY (`parent_comment_id`) REFERENCES `comment`(id);
 ALTER TABLE `comment` ADD CONSTRAINT `comment_fk3` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`);
+
+-- SCHEMA FOR ENTITY INHERITANCE EXAMPLES
+
+-- table per concrete class inheritance
+CREATE TABLE `cat` (
+	id int not null auto_increment unique,
+    name varchar(20) not null,
+    is_purring boolean not null
+);
+
+CREATE TABLE `dog` (
+	id int not null auto_increment unique,
+    name varchar(20) not null,
+    is_barking boolean not null
+);
+
+-- single table per class hierarchy inheritance
+CREATE TABLE `employee` (
+	id int not null auto_increment unique,
+    firstname varchar(20) not null,
+    lastname varchar(20) not null,
+    salary double not null,
+    specialization varchar(100) not null,
+    machine varchar(100),
+    sales_department varchar(100),
+    employee_type varchar(10) not null
+);
+
+-- table per every class inheritance
+CREATE TABLE `vehicle` (
+	id_vehicle int not null auto_increment unique,
+    manufacturer varchar(100) not null,
+    vehicle_type varchar(20) not null
+);
+
+CREATE TABLE `truck` (
+	id_truck int not null auto_increment unique,
+    load_capacity int(11) not null,
+    number_of_containers int(11) not null
+);
+
+CREATE TABLE `car` (
+	id_car int not null auto_increment unique,
+    number_of_passengers int(11) not null,
+    number_of_doors int(11) not null
+);
+
